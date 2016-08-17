@@ -1,9 +1,5 @@
 from settings import *
-import sys, urllib, hashlib
-if SSL == True:
-	import ssl
-	ssl = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-	ssl.load_cert_chain(SSL_CERT, SSL_KEY)
+import sys
 from flask import Flask, request, render_template, send_from_directory
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
@@ -38,9 +34,5 @@ if __name__ == "__main__":
 	if len(sys.argv) > 1 and sys.argv[1] == "build":
 		freezer.freeze()
 	else:
-		if SSL == True:
-			print(Fore.GREEN + "Your server is running with SSL on port 5000.")
-			app.run(host="0.0.0.0", debug=DEBUG, ssl_context=ssl)
-		else:
-			print(Fore.YELLOW + "Your server is running without SSL on port 5000.")
-			app.run(host="0.0.0.0", debug=DEBUG)
+		print(Fore.GREEN + "Your server is running with an adhoc SSL certificate on port 5000.")
+		app.run(host="0.0.0.0", debug=DEBUG, ssl_context="adhoc")
