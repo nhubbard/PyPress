@@ -8,6 +8,9 @@ from flask import Flask, request, render_template, send_from_directory
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
 from flask_gravatar import Gravatar
+from colorama import init as color_init
+from colorama import Fore, Back, Style
+color_init()
 app = Flask(__name__)
 flatpages = FlatPages(app)
 freezer = Freezer(app)
@@ -37,5 +40,7 @@ if __name__ == "__main__":
 	else:
 		if SSL == True:
 			app.run(host="0.0.0.0", debug=DEBUG, ssl_context=ssl)
+			print(Fore.GREEN + "Your server is running with SSL on port 5000.")
 		else:
 			app.run(host="0.0.0.0", debug=DEBUG)
+			print(Fore.YELLOW + "Your server is running without SSL on port 5000.")

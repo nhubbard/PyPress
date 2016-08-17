@@ -23,12 +23,11 @@
 			<h3 class="nav-title">Menu</h3>
 			<ul>
 				<li class="nav-home nav-current" role="presentation"><a href="/">Home</a></li>
-				<span class='st_facebook'></span>
-				<span class='st_twitter'></span>
-				<span class='st_googleplus'></span>
-				<span class='st_linkedin'></span>
-				<span class='st_pinterest'></span>
-				<span class='st_email'></span>
+				<span class="st_facebook"></span>
+				<span class="st_twitter"></span>
+				<span class="st_googleplus"></span>
+				<span class="st_linkedin"></span>
+				<span class="st_pinterest"></span>
 			</ul>
 		</div>
 		<span class="nav-cover"></span>
@@ -59,7 +58,7 @@
 					<header class="post-header">
 						<h1 class="post-title">{{ post.title }}</h1>
 						<section class="post-meta">
-							<img class="author-thumb" src='{{ post.gravatar | gravatar }}'>
+							<img class="author-thumb" src="{{ post.gravatar | gravatar }}">
 							<a href="#">{{ post.author }}</a>
 							<time class="post-date" datetime="{{ post.date }}">{{ post.date }}</time>
 						</section>
@@ -70,7 +69,7 @@
 					</section>
 					<footer class="post-footer">
 						<figure class="author-image">
-							<a class="img" href="#" style='background-image: url({{ post.gravatar | gravatar }}'>
+							<a class="img" href="#" style="background-image: url({{ post.gravatar | gravatar }}">
 								<span class="hidden">This is the author's profile picture.</span>
 							</a>
 						</figure>
