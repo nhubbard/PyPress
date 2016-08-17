@@ -39,8 +39,8 @@ if __name__ == "__main__":
 		freezer.freeze()
 	else:
 		if SSL == True:
-			app.run(host="0.0.0.0", debug=DEBUG, ssl_context=ssl)
 			print(Fore.GREEN + "Your server is running with SSL on port 5000.")
+			app.run(host="0.0.0.0", debug=DEBUG, ssl_context=ssl)
 		else:
-			app.run(host="0.0.0.0", debug=DEBUG)
 			print(Fore.YELLOW + "Your server is running without SSL on port 5000.")
+			app.run(host="0.0.0.0", debug=DEBUG)
