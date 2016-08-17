@@ -1,0 +1,11 @@
+DEBUG = True
+SSL = False
+FLATPAGES_AUTO_RELOAD = DEBUG
+FLATPAGES_EXTENSION = ".md"
+FLATPAGES_ROOT = "content"
+SSL_KEY = "/path/to/key.key"
+SSL_CERT = "/path/to/cert.crt"
+TITLE = "Basecamp"
+DESCRIPTION = "The awesome-looking base template that comes with PyPress."
+# LOGO = None
+# COVER = "https://images.unsplash.com/photo-1415045550139-59b6fafc832f"

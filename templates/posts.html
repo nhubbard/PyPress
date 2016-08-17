@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		{% if title is defined %}
+			<title>{{ title }}</title>
+		{% else %}
+			<title>PyPress Example</title>
+		{% endif %}
+		{% if description is defined %}
+			<meta name="description" content="{{ description }}">
+		{% else %}
+			<meta name="description" content="This is a PyPress example site.">
+		{% endif %}
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://localhost:5000/assets/main.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" rel="stylesheet" type="text/css">
+	</head>
+	<body class="nav-closed">
+		<div class="nav">
+			<h3 class="nav-title">Menu</h3>
+			<ul>
+				<li class="nav-home nav-current" role="presentation"><a href="/">Home</a></li>
+    		</ul>
+		</div>
+		<span class="nav-cover"></span>
+		<div class="site-wrapper">
+			<header class="main-header" style="background-image: url(https://source.unsplash.com/category/nature)">
+				<nav class="main-nav overlay clearfix">
+					<a class="blog-logo" href="/"><img src="/assets/logo.png" alt="{{ title }}"></a>
+					<a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+				</nav>
+				<div class="vertical">
+					<div class="main-header-content inner">
+						{% if title is defined %}
+							<h1 class="page-title">{{ title }}</h1>
+						{% else %}
+							<h1 class="page-title">Example Blog</h1>
+						{% endif %}
+						{% if description is defined %}
+							<h2 class="page-description">{{ description }}</h2>
+						{% else %}
+							<h2 class="page-description">An example blog created with PyPress.</h2>
+						{% endif %}
+					</div>
+				</div>
+				<a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+			</header>
+			<main id="content" class="content" role="main">
+				{% for post in posts %}
+					<article class="post">
+						<header class="post-header">
+							<h2 class="post-title"><a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
+							{{ post.title }}</a></h2>
+						</header>
+						<section class="post-excerpt">
+							<p>{{ post.preview }} <i><a class="read-more" href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">Read more &raquo;</a></i></p>
+						</section>
+						<footer class="post-meta">
+							<img class="author-thumb" src="{{ post.gravatar | gravatar }}">
+							<a href="#">{{ post.author }}</a>
+							<time class="post-date" datetime="{{ post.date }}">{{ post.date }}</time>
+						</footer>
+					</article>
+				{% endfor %}
+			</main>
+			<footer class="site-footer clearfix">
+				<section class="copyright">
+					<a href="/">
+						{% if title is defined %}
+							{{ title }}
+						{% endif %}
+					</a> &copy;	2016</section>
+				<section class="poweredby">Published Pythontastically with <a href="https://github.com/nhubbard/PyPress">PyPress</a></section>
+			</footer>
+			<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+			<script type="text/javascript" src="http://localhost:5000/assets/index.js"></script>
+		</div>
+	</body>
+</html>
