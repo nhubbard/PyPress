@@ -9,7 +9,7 @@
 			e.preventDefault();
 			$("body").toggleClass("nav-opened nav-closed");
 		});
-		$("pre code").each(function(i, block) {
+		$("pre").each(function(i, block) {
 			hljs.highlightBlock(block);
 		});
 	});

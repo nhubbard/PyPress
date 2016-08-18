@@ -12,6 +12,7 @@ flatpages = FlatPages(app)
 freezer = Freezer(app)
 gravatar = Gravatar(app, size=40, rating="g", default="https://s3.postimg.org/du6g05qbn/default_user.png", use_ssl=True)
 app.config.from_object(__name__)
+app.config["FLATPAGES_MARKDOWN_EXTENSIONS"] = []
 @app.route("/")
 def posts():
 	posts = [p for p in flatpages if p.path.startswith("posts")]
