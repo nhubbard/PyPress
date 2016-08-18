@@ -9,6 +9,9 @@
 			e.preventDefault();
 			$("body").toggleClass("nav-opened nav-closed");
 		});
+		$("pre code").each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
 	});
 	$.fn.arctic_scroll = function(options) {
 		var defaults = {

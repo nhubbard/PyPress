@@ -14,5 +14,4 @@ Welcome to PyPress! Customize everything how you want. Using Markdown, you can d
 
 > Block quotes.
 
-	:::javascript
-	console.log("And highlighted code if you indent!");
+	console.log("And code if you indent!");
