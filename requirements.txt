@@ -11,3 +11,4 @@ itsdangerous==0.22
 wsgiref==0.1.2
 Flask-Gravatar==0.4.2
 colorama==0.3.7
+flup==1.2.0
