@@ -1,18 +1,18 @@
 {% extends "layout/layout.html" %}
 {% block title %}{{ post.title }}{% endblock %}
-{% block navhome %}&8610; Return to Home{% endblock %}
+{% block navhome %}↢ Return to Home{% endblock %}
 {% block content %}
-	<article class="post">
+	<article class="post" itemscope itemtype="https://schema.org/NewsArticle">
 		<header class="post-header">
-			<h1 class="post-title">{{ post.title }}</h1>
+			<h1 class="post-title" itemprop="headline">{{ post.title }}</h1>
 			<section class="post-meta">
 				<img class="author-thumb" src="{{ post.gravatar | gravatar }}" alt="This is the author's Gravatar.">
-				<a href="{{ post.url }}">{{ post.author }}</a>
-				<time class="post-date" datetime="{{ post.date }}">{{ post.date }}</time>
+				<a href="{{ post.url }}" itemprop="author">{{ post.author }}</a>
+				<time class="post-date" datetime="{{ post.microdate }}" itemprop="datePublished" content="{{ post.microdate }}">{{ post.date }}</time>
 			</section>
 		</header>
 		<br>
-		<section class="post-content">
+		<section class="post-content" itemprop="articleBody">
 			{{ post.html | safe }}
 		</section>
 		<footer class="post-footer">

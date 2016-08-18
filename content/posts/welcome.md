@@ -1,5 +1,6 @@
 title: Welcome to PyPress.
 date: August 16th, 2016
+microdate: 2016-08-16
 preview: Welcome to PyPress, the easy to use blogging platform for the masses.
 author: PyPress Team
 bio: "We are the creators of the PyPress blogging platform: a group of hard-working individuals that love what they do!"

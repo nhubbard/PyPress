@@ -12,6 +12,9 @@
 		$("pre").each(function(i, block) {
 			hljs.highlightBlock(block);
 		});
+		$("code").each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
 	});
 	$.fn.arctic_scroll = function(options) {
 		var defaults = {
