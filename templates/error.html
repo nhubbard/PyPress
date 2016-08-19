@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Error {{ code }}{% endblock %}
+{% block navhome %}↢ Return to Home{% endblock %}
+{% block content %}
+	<article class="post" itemscope itemtype="https://schema.org/NewsArticle">
+		<header class="post-header">
+			<h1 class="post-title" itemprop="headline">{{ code }} ({{ explain }})</h1>
+			<section class="post-meta">
+				<img class="author-thumb" src="{{ 'example@example.com' | gravatar }}" alt="This is the author's Gravatar.">
+				<a href="#" itemprop="author">The Bringer of Bad News</a>
+				<time class="post-date" datetime="1776-07-04" itemprop="datePublished" content="1776-07-04">July 4th, 1776</time>
+			</section>
+		</header>
+		<br>
+		<section class="post-content ">
+			<p>
+				<span class="blokk">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et tortor orci. Donec bibendum condimentum tempor. Morbi vitae tortor semper, finibus tortor id, auctor lectus. Cras non elit in elit ultrices interdum efficitur sit amet sem. Duis finibus pretium sapien eu dignissim. Aliquam aliquet ipsum sed turpis iaculis, porta laoreet eros venenatis. Proin auctor vel ante vel commodo. Nulla facilisi. Donec convallis fermentum ante non vehicula. Mauris eu egestas dolor, nec posuere enim. Donec risus nisl, convallis nec aliquet sed, viverra at sapien. Etiam eleifend blandit odio, in ultricies est molestie quis. Cras ac consectetur augue. Nam mi enim, imperdiet eget venenatis quis, maximus ac urna. Nam molestie lacus at orci posuere dignissim. Donec laoreet ex quis consequat pellentesque. Aenean ut lacus eget massa auctor lacinia. Pellentesque ornare tortor et ante dapibus tincidunt. Nullam at sem id magna ullamcorper sagittis in non quam. Cras sit amet quam cursus, fermentum mauris et, tristique orci. Donec mauris dui, dapibus sit amet pellentesque at, facilisis vitae ipsum. Sed mollis mattis nunc. Nullam ipsum augue, commodo sit amet dignissim sed, semper at dolor. Morbi egestas varius elit eu mollis. Donec rutrum mauris orci, lacinia pellentesque lectus fringilla vel. In augue odio, iaculis eu malesuada non, mattis quis nulla. Integer interdum tincidunt sapien, scelerisque mattis odio. Morbi hendrerit congue ornare. Etiam quis dui sit amet turpis aliquam eleifend. Morbi vehicula nulla odio. Sed sagittis turpis nec suscipit tincidunt. Cras risus leo, hendrerit eget ipsum sed, finibus fermentum nisi. Praesent consequat ligula a tempus malesuada. Vivamus porttitor nibh at gravida lobortis.</span> <span class="unblokk"><i>You have hit a {{ code }} ({{ explain }}) error.</i></span> <span class="blokk">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut vulputate ut lorem non porta. Praesent posuere erat et egestas consequat. Morbi semper ut magna ut pharetra. Integer molestie lectus in felis venenatis, ut ultrices mauris lobortis. Ut vel nisl eu enim rhoncus rhoncus quis eu velit. Proin ac felis nisl. Praesent eleifend, eros a vehicula pharetra, odio diam ornare elit, rhoncus vulputate orci tellus a elit. Integer leo magna, sollicitudin in erat nec, malesuada venenatis risus. Vivamus consequat, nisi quis semper facilisis, ipsum eros rhoncus ligula, vitae semper lacus mi a nisi. Proin euismod molestie mauris, accumsan vehicula felis finibus ut. Quisque facilisis pretium metus a sagittis.</span> <span class="unblokk"><a href="/"><i><b>Click anywhere on this sentence to go home.</b></i></a></span> <span class="blokk">Integer quis semper nulla. Suspendisse ultricies quam a feugiat luctus. Pellentesque maximus molestie lectus a tincidunt. Sed at mollis ex, ac facilisis orci. Integer commodo quis nibh nec malesuada. Duis est leo, condimentum quis finibus lacinia, rhoncus in quam. Morbi non auctor nibh. Aenean libero sapien, auctor ut varius sed, ullamcorper at nibh. Morbi sed sapien risus. Vivamus sem mi, faucibus convallis faucibus ut, laoreet sed sapien. Aliquam blandit eros hendrerit dictum bibendum. Phasellus ac erat dolor. Fusce rutrum nulla in augue hendrerit sollicitudin. Cras ullamcorper tristique nulla, vestibulum viverra mi vehicula sit amet. Curabitur ut orci non nulla vulputate condimentum quis in velit. Nullam congue eros id orci finibus sodales. Nulla eget odio magna. Ut venenatis tempus justo, non vestibulum neque consequat sit amet.</span>
+			</p>
+		</section>
+		<footer class="post-footer">
+			<figure class="author-image">
+				<a class="img" href="#" style="background-image: url({{ 'example@example.com' | gravatar }}">
+					<span class="hidden">This is the author's profile picture.</span>
+				</a>
+			</figure>
+			<section class="author">
+				<h4><a href="https://example.org">The Bringer of Bad News</a></h4>
+				<p>The Bringer of Bad News is the one who always tells you what is wrong with everything. He is a wonderful man on the inside, but he has been condemned forever to bring bad news.</p>
+				<div class="author-meta">
+					<span class="author-location icon-location">Messengerville, NY</span>
+					<span class="author-link icon-link">
+						<a href="https://example.org">https://example.org</a>
+					</span>
+				</div>
+			</section>
+		</footer>
+	</article>
+{% endblock %}

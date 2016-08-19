@@ -31,9 +31,21 @@ def other(name):
 	path = "{}/{}".format("extras", name)
 	post = flatpages.get_or_404(path)
 	return render_template("post.html", title=TITLE, description=DESCRIPTION, post=post)
+@app.errorhandler(404)
+def error404(e):
+	return render_template("error.html", title=TITLE, description=DESCRIPTION, code="404", explain="Page Not Found"), 404
+@app.errorhandler(403)
+def error403(e):
+	return render_template("error.html", title=TITLE, description=DESCRIPTION, code="403", explain="Forbidden"), 403
+@app.errorhandler(410)
+def error410(e):
+	return render_template("error.html", title=TITLE, description=DESCRIPTION, code="410", explain="Permanantly Deleted"), 410
+@app.errorhandler(500)
+def error500(e):
+	return render_template("error.html", title=TITLE, description=DESCRIPTION, code="500", explain="Internal Server Error"), 500
 if __name__ == "__main__":
 	if len(sys.argv) > 1 and sys.argv[1] == "build":
 		freezer.freeze()
-	else:
+	if len(sys.argv) > 1 and sys.argv[1] == "run":
 		print(Fore.GREEN + "Your server is running with an adhoc SSL certificate on port 5000.")
 		app.run(host="0.0.0.0", debug=DEBUG, ssl_context="adhoc")
